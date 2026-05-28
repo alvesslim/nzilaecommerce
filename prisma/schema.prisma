@@ -1,0 +1,90 @@
+// Prisma Schema - WantelCom E-commerce
+// Run `npx prisma generate` after making changes
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model User {
+  id        String   @id @default(cuid())
+  name      String
+  email     String   @unique
+  password  String
+  phone     String?
+  role      Role     @default(CUSTOMER)
+  avatar    String?
+  address   Json?
+  orders    Order[]
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+}
+
+model Product {
+  id          String      @id @default(cuid())
+  name        String
+  brand       String
+  price       Float
+  oldPrice    Float?
+  image       String
+  images      String[]
+  category    String
+  subcategory String?
+  rating      Float       @default(0)
+  reviewCount Int         @default(0)
+  views       Int         @default(0)
+  badge       String?
+  badgeText   String?
+  description String?
+  specs       Json?
+  stock       Int         @default(0)
+  active      Boolean     @default(true)
+  orderItems  OrderItem[]
+  createdAt   DateTime    @default(now())
+  updatedAt   DateTime    @updatedAt
+}
+
+model Order {
+  id              String      @id @default(cuid())
+  orderNumber     String      @unique
+  userId          String
+  user            User        @relation(fields: [userId], references: [id])
+  items           OrderItem[]
+  status          OrderStatus @default(PENDING)
+  paymentMethod   String
+  subtotal        Float
+  discount        Float       @default(0)
+  shipping        Float       @default(0)
+  total           Float
+  shippingAddress Json
+  createdAt       DateTime    @default(now())
+  updatedAt       DateTime    @updatedAt
+}
+
+model OrderItem {
+  id        String  @id @default(cuid())
+  orderId   String
+  order     Order   @relation(fields: [orderId], references: [id])
+  productId String
+  product   Product @relation(fields: [productId], references: [id])
+  quantity  Int
+  price     Float
+}
+
+enum Role {
+  CUSTOMER
+  ADMIN
+  MANAGER
+}
+
+enum OrderStatus {
+  PENDING
+  PROCESSING
+  SHIPPING
+  DELIVERED
+  CANCELLED
+}
