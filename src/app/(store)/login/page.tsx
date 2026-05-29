@@ -30,7 +30,7 @@ export default function LoginPage() {
         
         <div className="text-center mb-8 relative z-10">
           <h1 className="font-heading text-[2rem] font-extrabold tracking-tight mb-2">Bem-vindo de volta</h1>
-          <p className="text-text2 text-[0.95rem]">Aceda à sua conta WantelCom</p>
+          <p className="text-text2 text-[0.95rem]">Aceda à sua conta Nzila E-commerce</p>
         </div>
 
         <form onSubmit={handleLogin} className="flex flex-col gap-5 relative z-10">

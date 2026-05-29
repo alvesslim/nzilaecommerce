@@ -21,10 +21,10 @@ export const ROUTES = {
 };
 
 export const CONFIG = {
-  SITE_NAME: 'WantelCom',
+  SITE_NAME: 'Nzila E-commerce',
   SITE_DESC: 'A sua loja de tecnologia premium em Angola. Produtos originais, garantia completa e suporte dedicado 24/7.',
-  CONTACT_PHONE: '+244 946 798 270',
-  CONTACT_EMAIL: 'geral@wantelcom.ao',
+  CONTACT_PHONE: '+244 900 000 000',
+  CONTACT_EMAIL: 'geral@nziladigital.ao',
   CONTACT_ADDRESS: 'Luanda, Angola',
   CURRENCY: 'AKZ'
 };

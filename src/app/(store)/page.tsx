@@ -19,15 +19,31 @@ import { ROUTES } from '@/constants/routes';
 import { useCart } from '@/hooks/useCart';
 import { useToast } from '@/hooks/useToast';
 
-// Helper component for icons
-import * as PhosphorIcons from '@phosphor-icons/react';
+import {
+  BookOpen,
+  Laptop,
+  Cpu,
+  Plug,
+  House as HouseIcon,
+  Gear,
+  Car,
+  Storefront
+} from '@phosphor-icons/react';
+
+// Static map of category icon names to their components — no wildcard import needed
+const ICON_MAP: Record<string, React.ComponentType<any>> = {
+  'ph-book-open': BookOpen,
+  'ph-laptop': Laptop,
+  'ph-cpu': Cpu,
+  'ph-plug': Plug,
+  'ph-house': HouseIcon,
+  'ph-gear': Gear,
+  'ph-car': Car,
+  'ph-storefront': Storefront,
+};
 
 const IconByName = ({ icon, className }: { icon: string, className?: string }) => {
-  // Map 'ph-laptop' to 'Laptop'
-  const nameParts = icon.replace('ph-', '').split('-');
-  const compName = nameParts.map(p => p.charAt(0).toUpperCase() + p.slice(1)).join('');
-  const IconComp = (PhosphorIcons as any)[compName];
-  
+  const IconComp = ICON_MAP[icon];
   if (!IconComp) return null;
   return <IconComp weight="regular" className={className} />;
 };
@@ -96,7 +112,7 @@ export default function Home() {
           {/* Hero Visual Device */}
           <div className="relative flex items-center justify-center max-md:hidden">
             <div className="w-full max-w-[500px] bg-surface border border-border rounded-3xl p-8 relative overflow-hidden shadow-xl">
-              <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top_right,rgba(37,99,235,0.1),transparent_60%)] pointer-events-none"></div>
+              <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top_right,rgba(201,168,76,0.1),transparent_60%)] pointer-events-none"></div>
               <div className="text-[0.75rem] text-text3 uppercase tracking-widest mb-6 font-semibold flex items-center gap-1.5">
                 <Star weight="fill" className="text-gold" /> Produto em Destaque
               </div>
@@ -189,7 +205,7 @@ export default function Home() {
       </section>
 
       {/* PROMO BANNER */}
-      <div className="bg-gradient-to-br from-[#1E3A8A] to-blue rounded-3xl p-16 mx-8 flex items-center justify-between gap-12 relative overflow-hidden shadow-xl max-lg:flex-col max-lg:text-center max-lg:p-12 max-sm:mx-4 max-sm:p-8">
+      <div className="bg-gradient-to-br from-[#2C2A22] to-blue rounded-3xl p-16 mx-8 flex items-center justify-between gap-12 relative overflow-hidden shadow-xl max-lg:flex-col max-lg:text-center max-lg:p-12 max-sm:mx-4 max-sm:p-8">
         <div className="absolute -right-[5%] -top-[20%] w-[400px] h-[400px] bg-white/5 rounded-full pointer-events-none max-lg:hidden"></div>
         <div className="absolute right-[20%] -bottom-[30%] w-[250px] h-[250px] bg-white/5 rounded-full pointer-events-none max-lg:hidden"></div>
         
@@ -211,6 +227,7 @@ export default function Home() {
             alt="Promo Bags" 
             width={300} 
             height={400} 
+            loading="lazy"
             className="w-full h-auto rounded-2xl shadow-lg" 
           />
         </div>

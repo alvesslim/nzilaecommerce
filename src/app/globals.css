@@ -7,54 +7,59 @@
 
 @layer base {
   :root {
-    --blue: #2563EB;
-    --blue-dark: #1D4ED8;
-    --blue-light: #3B82F6;
-    --bg: #030712;
-    --surface: #111827;
-    --surface2: #1F2937;
-    --surface3: #374151;
-    --text: #F9FAFB;
-    --text2: #9CA3AF;
-    --text3: #6B7280;
-    --border: #374151;
-    --accent: #10B981; 
-    --gold: #F59E0B;
+    --blue: #C9A84C;         /* Ouro Nzila */
+    --blue-dark: #8B6914;    /* Gold dark */
+    --blue-light: #E8C97A;   /* Gold light */
+    --bg: #0A0A0A;           /* Abismo */
+    --surface: #111111;      /* Black-card */
+    --surface2: #1E1E1E;     /* Black-border */
+    --surface3: #2C2A22;     /* Sombra */
+    --text: #F5F2EC;         /* Marfim */
+    --text2: #888880;        /* Muted */
+    --text3: #555555;
+    --border: #1E1E1E;       /* Black-border */
+    --accent: #C9A84C;       /* Gold */
+    --gold: #C9A84C;         /* Gold */
     
-    --nav-bg: rgba(3, 7, 18, 0.85);
-    --grid-line: rgba(255, 255, 255, 0.03);
-    --glass-bg: rgba(3, 7, 18, 0.6);
-    --glass-bg-hover: rgba(3, 7, 18, 0.9);
-    --overlay: rgba(3, 7, 18, 0.4);
-    --auth-glow: rgba(255, 255, 255, 0.05);
-    --chat-avatar-bg: rgba(255, 255, 255, 0.2);
+    --nav-bg: rgba(10, 10, 10, 0.85);
+    --grid-line: rgba(245, 242, 236, 0.03);
+    --glass-bg: rgba(10, 10, 10, 0.6);
+    --glass-bg-hover: rgba(10, 10, 10, 0.9);
+    --overlay: rgba(10, 10, 10, 0.4);
+    --auth-glow: rgba(201, 168, 76, 0.05);
+    --chat-avatar-bg: rgba(245, 242, 236, 0.2);
     
-    --shadow-lg: 0 20px 40px rgba(0, 0, 0, 0.4);
-    --shadow-xl: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
-    --shadow-btn: 0 8px 30px rgba(37, 99, 235, 0.3);
+    --shadow-lg: 0 20px 40px rgba(0, 0, 0, 0.6);
+    --shadow-xl: 0 25px 50px -12px rgba(0, 0, 0, 0.7);
+    --shadow-btn: 0 8px 30px rgba(201, 168, 76, 0.3);
   }
 
   [data-theme="light"] {
-    --bg: #f8fafc;
-    --surface: #ffffff;
-    --surface2: #f1f5f9;
-    --surface3: #e2e8f0;
-    --text: #0f172a;
-    --text2: #475569;
-    --text3: #64748b;
-    --border: #e2e8f0;
+    --blue: #8B6914;         /* Gold dark for readability on light */
+    --blue-dark: #664E0E;
+    --blue-light: #C9A84C;
+    --bg: #F5F2EC;           /* Marfim */
+    --surface: #FFFFFF;      /* Clean White */
+    --surface2: #EAE6DB;     /* Muted Marfim */
+    --surface3: #DFD9CB;     /* Deeper Marfim */
+    --text: #0A0A0A;         /* Abismo */
+    --text2: #555550;        /* Dark Muted */
+    --text3: #888880;        /* Muted */
+    --border: #DFD9CB;       /* Deeper Marfim border */
+    --accent: #8B6914;
+    --gold: #8B6914;
     
-    --nav-bg: rgba(255, 255, 255, 0.85);
-    --grid-line: rgba(0, 0, 0, 0.04);
-    --glass-bg: rgba(255, 255, 255, 0.7);
-    --glass-bg-hover: rgba(255, 255, 255, 0.95);
-    --overlay: rgba(255, 255, 255, 0.6);
-    --auth-glow: rgba(0, 0, 0, 0.05);
-    --chat-avatar-bg: rgba(0, 0, 0, 0.1);
+    --nav-bg: rgba(245, 242, 236, 0.85);
+    --grid-line: rgba(10, 10, 10, 0.04);
+    --glass-bg: rgba(245, 242, 236, 0.7);
+    --glass-bg-hover: rgba(245, 242, 236, 0.95);
+    --overlay: rgba(245, 242, 236, 0.6);
+    --auth-glow: rgba(139, 105, 20, 0.05);
+    --chat-avatar-bg: rgba(10, 10, 10, 0.1);
     
-    --shadow-lg: 0 20px 40px rgba(0, 0, 0, 0.08);
-    --shadow-xl: 0 25px 50px -12px rgba(0, 0, 0, 0.1);
-    --shadow-btn: 0 8px 30px rgba(37, 99, 235, 0.25);
+    --shadow-lg: 0 20px 40px rgba(139, 105, 20, 0.05);
+    --shadow-xl: 0 25px 50px -12px rgba(139, 105, 20, 0.08);
+    --shadow-btn: 0 8px 30px rgba(139, 105, 20, 0.2);
   }
 
   body {
@@ -106,8 +111,8 @@ body.theme-transition *:after {
 .hero-bg {
   position: absolute;
   inset: 0;
-  background: radial-gradient(circle at 60% 30%, rgba(37, 99, 235, 0.15) 0%, transparent 50%),
-              radial-gradient(circle at 20% 80%, rgba(16, 185, 129, 0.05) 0%, transparent 50%);
+  background: radial-gradient(circle at 60% 30%, rgba(201, 168, 76, 0.12) 0%, transparent 50%),
+              radial-gradient(circle at 20% 80%, rgba(139, 105, 20, 0.05) 0%, transparent 50%);
 }
 
 .hero-grid {

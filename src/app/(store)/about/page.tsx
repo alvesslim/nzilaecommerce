@@ -12,7 +12,7 @@ export default function AboutPage() {
       {/* Hero */}
       <div className="text-center max-w-[800px] mx-auto mb-20">
         <h1 className="font-heading text-[clamp(2.5rem,5vw,3.5rem)] font-extrabold tracking-tight mb-6">
-          Sobre a <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-light to-blue">WantelCom</span>
+          Sobre a <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-light to-blue">Nzila E-commerce</span>
         </h1>
         <p className="text-[1.2rem] text-text2 leading-[1.6]">
           A sua parceira de confiança em soluções tecnológicas avançadas. Desde a nossa fundação, o nosso objetivo tem sido conectar os angolanos às melhores marcas e inovações mundiais.
@@ -23,7 +23,7 @@ export default function AboutPage() {
       <div className="w-full aspect-[21/9] rounded-3xl overflow-hidden mb-24 max-md:aspect-[16/9]">
         <Image 
           src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?q=80&w=1200&auto=format&fit=crop" 
-          alt="Equipa WantelCom" 
+          alt="Equipa Nzila E-commerce" 
           width={1200} 
           height={600} 
           className="w-full h-full object-cover" 
@@ -56,7 +56,7 @@ export default function AboutPage() {
       <div className="text-center mb-16">
         <h2 className="font-heading text-[2.5rem] font-extrabold mb-4">Os Nossos Valores</h2>
         <p className="text-text2 max-w-[600px] mx-auto text-[1.1rem]">
-          Princípios fundamentais que guiam todas as nossas ações e decisões no dia-a-dia da WantelCom.
+          Princípios fundamentais que guiam todas as nossas ações e decisões no dia-a-dia da Nzila E-commerce.
         </p>
       </div>
       

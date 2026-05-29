@@ -18,7 +18,7 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
   const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
-    const saved = localStorage.getItem('wantelcom_user');
+    const saved = localStorage.getItem('nziladigital_user');
     if (saved) { try { setUser(JSON.parse(saved)); } catch {} }
     setIsLoading(false);
   }, []);
@@ -28,7 +28,7 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
     // TODO: Replace with real API call
     const mockUser: User = { id: '1', name: 'João Silva', email, role: 'customer', createdAt: new Date().toISOString() };
     setUser(mockUser);
-    localStorage.setItem('wantelcom_user', JSON.stringify(mockUser));
+    localStorage.setItem('nziladigital_user', JSON.stringify(mockUser));
     setIsLoading(false);
   };
 
@@ -36,13 +36,13 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
     setIsLoading(true);
     const mockUser: User = { id: '2', name, email, role: 'customer', createdAt: new Date().toISOString() };
     setUser(mockUser);
-    localStorage.setItem('wantelcom_user', JSON.stringify(mockUser));
+    localStorage.setItem('nziladigital_user', JSON.stringify(mockUser));
     setIsLoading(false);
   };
 
   const logout = () => {
     setUser(null);
-    localStorage.removeItem('wantelcom_user');
+    localStorage.removeItem('nziladigital_user');
   };
 
   return (

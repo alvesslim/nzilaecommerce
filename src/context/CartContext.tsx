@@ -28,7 +28,7 @@ export function CartProvider({ children }: { children: React.ReactNode }) {
   
   // Load from local storage
   useEffect(() => {
-    const savedCart = localStorage.getItem('wantelcom_cart');
+    const savedCart = localStorage.getItem('nziladigital_cart');
     if (savedCart) {
       try {
         setCart(JSON.parse(savedCart));
@@ -40,7 +40,7 @@ export function CartProvider({ children }: { children: React.ReactNode }) {
   
   // Save to local storage when cart changes
   useEffect(() => {
-    localStorage.setItem('wantelcom_cart', JSON.stringify(cart));
+    localStorage.setItem('nziladigital_cart', JSON.stringify(cart));
   }, [cart]);
 
   const calculateTotals = (items: CartItem[]) => {

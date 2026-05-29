@@ -62,7 +62,6 @@ export default function ContactPage() {
                 <div>
                   <h3 className="font-bold text-[1.1rem] mb-1">Telefone</h3>
                   <p className="text-text2 leading-[1.5]">{CONFIG.CONTACT_PHONE}</p>
-                  <p className="text-text2 leading-[1.5]">+244 900 000 000</p>
                 </div>
               </div>
               
@@ -73,7 +72,7 @@ export default function ContactPage() {
                 <div>
                   <h3 className="font-bold text-[1.1rem] mb-1">Email</h3>
                   <p className="text-text2 leading-[1.5]">{CONFIG.CONTACT_EMAIL}</p>
-                  <p className="text-text2 leading-[1.5]">suporte@wantelcom.ao</p>
+                  <p className="text-text2 leading-[1.5]">suporte@nziladigital.ao</p>
                 </div>
               </div>
               

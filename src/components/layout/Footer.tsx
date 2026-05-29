@@ -14,20 +14,20 @@ export default function Footer() {
         {/* Company Info */}
         <div>
           <div className="mb-6 max-sm:flex max-sm:justify-center">
-            <Image 
-              src="/images/wantel-WHITE.png" 
-              alt="WantelCom" 
-              width={160} 
-              height={40} 
-              className="footer-logo-img logo-dark" 
-            />
-            <Image 
-              src="/images/wantel.png" 
-              alt="WantelCom" 
-              width={160} 
-              height={40} 
-              className="footer-logo-img logo-light hidden" 
-            />
+            <Link href={ROUTES.HOME} className="flex items-center gap-3 no-underline cursor-pointer group">
+              <div className="relative w-[38px] h-[38px] flex-shrink-0">
+                <svg className="w-full h-full" viewBox="0 0 72 72" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <rect width="72" height="72" rx="10" fill="var(--surface2)" className="transition-colors group-hover:fill-surface3" />
+                  <path d="M16 54V18L36 46V18" stroke="var(--gold)" strokeWidth="4.5" strokeLinecap="round" strokeLinejoin="round" />
+                  <path d="M36 46V18L56 54V18" stroke="var(--gold)" strokeWidth="4.5" strokeLinecap="round" strokeLinejoin="round" />
+                  <circle cx="56" cy="18" r="3.5" fill="var(--gold)" />
+                  <circle cx="16" cy="18" r="3.5" fill="var(--gold)" opacity="0.4" />
+                </svg>
+              </div>
+              <div className="font-heading font-black text-[1.15rem] tracking-[0.16em] uppercase text-text transition-colors group-hover:text-gold select-none">
+                NZILA <span className="text-gold">E-commerce</span>
+              </div>
+            </Link>
           </div>
           <p className="text-text2 text-[0.95rem] leading-[1.7] mb-8 max-w-[300px] max-sm:mx-auto">
             {CONFIG.SITE_DESC}
